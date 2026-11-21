@@ -1,0 +1,123 @@
+@if (project(); as item) {
+  <main class="case-study shell">
+    <a class="back-link" href="#projects" (click)="$event.preventDefault(); backToProjects()">
+      <span aria-hidden="true">←</span> {{ backLabel }}
+    </a>
+
+    <header class="case-hero">
+      <div class="case-heading-copy">
+        <div class="case-eyebrow"><span>{{ item.number }}</span><i></i><span>{{ item.category }}</span></div>
+        <h1>{{ item.title }}</h1>
+        <p class="case-subtitle">{{ item.subtitle }}</p>
+        <div class="case-meta">
+          <span>{{ item.organization }}</span>
+          <span class="meta-separator">/</span>
+          <span>{{ item.period }}</span>
+        </div>
+      </div>
+      <div class="case-metric-card">
+        <span>{{ item.number }}</span>
+        <strong>{{ item.metric }}</strong>
+        <small>{{ item.metricLabel }}</small>
+        <div class="metric-route" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </header>
+
+    <section class="case-architecture" aria-labelledby="architecture-title">
+      <div class="case-section-heading">
+        <div>
+          <span class="section-index">{{ architectureEyebrow }}</span>
+          <h2 id="architecture-title">{{ item.architectureTitle }}</h2>
+        </div>
+        <span class="architecture-stamp">ENGINEERING FLIGHT LOG</span>
+      </div>
+      <div class="architecture-flow" [class.architecture-three]="item.architecture.length === 3">
+        @for (node of item.architecture; track node; let index = $index) {
+          <div class="architecture-node">
+            <span class="architecture-node-index">0{{ index + 1 }}</span>
+            <span class="architecture-node-icon" aria-hidden="true">{{ index === 0 ? '◉' : index === item.architecture.length - 1 ? '◎' : '◇' }}</span>
+            <strong>{{ node }}</strong>
+          </div>
+          @if (index < item.architecture.length - 1) {
+            <span class="architecture-connector" aria-hidden="true">→</span>
+          }
+        }
+      </div>
+      <p class="architecture-note">{{ item.architectureNote }}</p>
+    </section>
+
+    <section class="case-overview">
+      <div class="case-overview-copy">
+        <span class="section-index">{{ overviewEyebrow }}</span>
+        <h2>{{ overviewLabel }}</h2>
+        <p>{{ item.overview }}</p>
+      </div>
+      <div class="case-stat-panel">
+        <div><span>{{ item.metric }}</span><small>{{ item.metricLabel }}</small></div>
+        <div><span>{{ item.technologies.length }}</span><small>{{ ui.language() === 'es' ? 'tecnologías principales' : 'key technologies' }}</small></div>
+      </div>
+    </section>
+
+    <section class="case-breakdown">
+      <article class="breakdown-card">
+        <span class="breakdown-index">A / 01</span>
+        <h3>{{ item.challengeTitle }}</h3>
+        <p>{{ item.challenge }}</p>
+      </article>
+      <article class="breakdown-card">
+        <span class="breakdown-index">B / 02</span>
+        <h3>{{ item.contributionTitle }}</h3>
+        <p>{{ item.contribution }}</p>
+      </article>
+      <article class="breakdown-card breakdown-result">
+        <span class="breakdown-index">C / 03</span>
+        <h3>{{ item.resultTitle }}</h3>
+        <p>{{ item.result }}</p>
+      </article>
+    </section>
+
+    <section class="case-highlights">
+      <div class="case-section-heading">
+        <div>
+          <span class="section-index">{{ highlightsEyebrow }}</span>
+          <h2>{{ item.highlightsTitle }}</h2>
+        </div>
+        <span class="heading-rule"></span>
+      </div>
+      <ul>
+        @for (highlight of item.highlights; track highlight; let index = $index) {
+          <li><span>0{{ index + 1 }}</span>{{ highlight }}</li>
+        }
+      </ul>
+    </section>
+
+    <section class="case-stack">
+      <div>
+        <span class="section-index">{{ stackEyebrow }}</span>
+        <h2>{{ stackLabel }}</h2>
+      </div>
+      <div class="case-tags">
+        @for (technology of item.technologies; track technology) { <span>{{ technology }}</span> }
+      </div>
+    </section>
+
+    <p class="case-confidentiality"><span aria-hidden="true">⌑</span> {{ item.confidentialityNote }}</p>
+
+    <div class="case-next-projects">
+      <div>
+        <span class="section-index">{{ nextEyebrow }}</span>
+        <h2>{{ nextLabel }}</h2>
+      </div>
+      <button type="button" class="button button-primary" (click)="backToProjects()">
+        {{ backLabel }} <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+  </main>
+} @else {
+  <main class="case-not-found shell">
+    <span class="section-index">404 / UNKNOWN DESTINATION</span>
+    <h1>{{ notFoundTitle }}</h1>
+    <p>{{ notFoundDescription }}</p>
+    <button type="button" class="button button-primary" (click)="backToProjects()">{{ backLabel }} ↗</button>
+  </main>
+}

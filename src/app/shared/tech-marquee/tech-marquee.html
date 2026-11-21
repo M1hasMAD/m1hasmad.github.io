@@ -1,0 +1,45 @@
+<section class="tech-marquee" aria-label="Technology stack">
+  <div class="marquee-window">
+    <div class="marquee-track">
+      <div class="marquee-group" role="list">
+        @for (technology of technologies; track technology.name) {
+          <div class="tech-item" role="listitem">
+            <span class="tech-logo" aria-hidden="true">
+              <span class="tech-fallback" hidden>{{ technology.mark }}</span>
+              <img
+                class="tech-icon"
+                [class.tech-icon--github]="technology.name === 'GitHub'"
+                [src]="technology.icon"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                (error)="onIconError($event)"
+              >
+            </span>
+            <span class="tech-name">{{ technology.name }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="marquee-group marquee-group--duplicate" role="presentation" aria-hidden="true">
+        @for (technology of technologies; track technology.name) {
+          <div class="tech-item">
+            <span class="tech-logo" aria-hidden="true">
+              <span class="tech-fallback" hidden>{{ technology.mark }}</span>
+              <img
+                class="tech-icon"
+                [class.tech-icon--github]="technology.name === 'GitHub'"
+                [src]="technology.icon"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                (error)="onIconError($event)"
+              >
+            </span>
+            <span class="tech-name">{{ technology.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

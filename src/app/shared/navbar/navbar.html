@@ -1,0 +1,49 @@
+<header class="site-header">
+  <div class="header-inner shell">
+    <a class="brand" href="#home" (click)="$event.preventDefault(); navigateTo('home')" aria-label="Mikhail Luchkin — Home">
+      <span class="brand-mark" aria-hidden="true">↗</span>
+      <span class="brand-copy">
+        <strong>ML / ENGINEERING</strong>
+        <small>FLIGHT LOG</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      @for (item of navigation(); track item.id) {
+        <a
+          [href]="'#' + item.id"
+          [class.active]="currentActiveSection() === item.id"
+          [attr.aria-current]="currentActiveSection() === item.id ? 'location' : null"
+          (click)="$event.preventDefault(); navigateTo(item.id)"
+        >{{ item.label }}</a>
+      }
+    </nav>
+
+    <div class="header-actions">
+      <div class="language-switch" aria-label="Language selector">
+        <button type="button" [class.active]="ui.language() === 'es'" (click)="ui.setLanguage('es')" aria-label="Español">ES</button>
+        <button type="button" [class.active]="ui.language() === 'en'" (click)="ui.setLanguage('en')" aria-label="English">EN</button>
+      </div>
+      <a class="cv-nav-button" [href]="cvPath()" [attr.download]="cvFilename()">CV <span aria-hidden="true">↓</span></a>
+      <button class="icon-button theme-button" type="button" (click)="ui.toggleTheme()" [attr.aria-label]="ui.theme() === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'">
+        @if (ui.theme() === 'dark') { <span aria-hidden="true">☼</span> } @else { <span aria-hidden="true">◐</span> }
+      </button>
+      <button class="icon-button menu-button" type="button" (click)="ui.toggleMenu()" [attr.aria-expanded]="ui.menuOpen()" aria-label="Toggle navigation menu">
+        <span aria-hidden="true">{{ ui.menuOpen() ? '×' : '☰' }}</span>
+      </button>
+    </div>
+  </div>
+
+  @if (ui.menuOpen()) {
+    <nav class="mobile-nav shell" aria-label="Mobile navigation">
+      @for (item of navigation(); track item.id) {
+        <a
+          [href]="'#' + item.id"
+          [class.active]="currentActiveSection() === item.id"
+          [attr.aria-current]="currentActiveSection() === item.id ? 'location' : null"
+          (click)="$event.preventDefault(); navigateTo(item.id)"
+        >{{ item.label }}<span>↗</span></a>
+      }
+    </nav>
+  }
+</header>

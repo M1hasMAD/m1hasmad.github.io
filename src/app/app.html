@@ -1,0 +1,17 @@
+<div class="app-background">
+  <div class="ambient-glow glow-one" aria-hidden="true"></div>
+  <div class="ambient-glow glow-two" aria-hidden="true"></div>
+  <ml-navbar />
+
+  @if (projectNavigation.activeSlug(); as projectSlug) {
+    <ml-project-detail [slug]="projectSlug" />
+  } @else {
+    <main class="shell main-content">
+      <ml-hero />
+      <ml-tech-marquee />
+      <ml-portfolio-sections />
+    </main>
+  }
+
+  <ml-site-footer />
+</div>

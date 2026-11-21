@@ -1,0 +1,179 @@
+:host {
+  display: block;
+  width: 100vw;
+  margin-inline-start: calc(50% - 50vw);
+  margin-block: clamp(34px, 4.5vw, 62px) clamp(42px, 5vw, 72px);
+}
+
+.tech-marquee {
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-raised) 82%, var(--page));
+}
+
+.marquee-window {
+  overflow: hidden;
+  padding-block: 22px;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  transform: translate3d(0, 0, 0);
+  animation: tech-marquee-scroll 54s linear infinite;
+  will-change: transform;
+}
+
+.marquee-window:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: clamp(34px, 4.3vw, 66px);
+  padding-inline: clamp(20px, 3vw, 44px);
+}
+
+.tech-item {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 13px;
+  min-height: 42px;
+  color: var(--text);
+  opacity: 0.88;
+  white-space: nowrap;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tech-item:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.tech-logo {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+}
+
+.tech-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tech-fallback {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  font: 700 10px var(--mono);
+  letter-spacing: -0.03em;
+}
+
+/* The [hidden] attribute must override component display rules.
+   Without this, the fallback mark and loaded logo are both rendered. */
+.tech-logo [hidden] {
+  display: none !important;
+}
+
+.tech-name {
+  color: var(--text);
+  font: 650 clamp(16px, 1.35vw, 19px)/1.2 var(--display);
+  letter-spacing: -0.025em;
+}
+
+:root[data-theme="dark"] .tech-icon--github {
+  filter: invert(1);
+}
+
+@keyframes tech-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 680px) {
+  :host {
+    margin-block: 30px 48px;
+  }
+
+  .marquee-window {
+    padding-block: 16px;
+  }
+
+  .marquee-group {
+    gap: 30px;
+    padding-inline: 18px;
+  }
+
+  .tech-item {
+    gap: 10px;
+    min-height: 34px;
+  }
+
+  .tech-logo {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+  }
+
+  .tech-name {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-window {
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .marquee-track {
+    width: 100%;
+    animation: none;
+  }
+
+  .marquee-group {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+    padding-inline: 18px;
+  }
+
+  .marquee-group--duplicate {
+    display: none;
+  }
+}
