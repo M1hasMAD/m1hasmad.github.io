@@ -204,11 +204,74 @@
 
   <aside class="contact-card" aria-label="Mikhail Luchkin contact information">
     <div class="contact-card-banner" aria-hidden="true">
-      <span class="contact-card-code">ML / ENGINEERING FLIGHT LOG</span>
-      <span class="contact-card-coordinate">CONTACT · 007</span>
-      <svg class="contact-card-route" viewBox="0 0 460 120" preserveAspectRatio="none">
-        <path d="M18 103 C105 97 98 25 205 47 S330 98 444 15"/>
-        <circle cx="18" cy="103" r="4"/><circle cx="205" cy="47" r="4"/><circle cx="444" cy="15" r="4"/>
+      <div class="contact-banner-heading">
+        <span>ML / ENGINEERING FLIGHT LOG</span>
+        <span>CONTACT · 007</span>
+      </div>
+
+      <svg class="contact-banner-map" viewBox="0 0 640 160" preserveAspectRatio="none">
+        <defs>
+          <pattern id="contact-dot-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.45" fill="#e0ad5d" fill-opacity=".2" />
+          </pattern>
+          <radialGradient id="contact-map-glow" cx="52%" cy="72%" r="68%">
+            <stop offset="0" stop-color="#d9a65a" stop-opacity=".16" />
+            <stop offset="1" stop-color="#d9a65a" stop-opacity="0" />
+          </radialGradient>
+          <linearGradient id="contact-route-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#8ca9bc" />
+            <stop offset=".55" stop-color="#e1ad5d" />
+            <stop offset="1" stop-color="#f0c477" />
+          </linearGradient>
+          <filter id="contact-node-glow" x="-150%" y="-150%" width="400%" height="400%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <rect width="640" height="160" fill="url(#contact-dot-grid)" />
+        <rect width="640" height="160" fill="url(#contact-map-glow)" />
+
+        <g class="contact-banner-contours" fill="none" stroke="#9bb0c1" stroke-opacity=".13">
+          <path d="M-20 145 C62 56 145 86 208 146" />
+          <path d="M360 166 C434 84 548 91 660 145" />
+          <path d="M-10 117 C82 42 137 56 210 117" />
+        </g>
+
+        <path
+          class="contact-banner-route-shadow"
+          d="M18 130 C112 130 105 59 230 72 S390 137 470 76 S560 48 622 30"
+        />
+        <path
+          class="contact-banner-route"
+          d="M18 130 C112 130 105 59 230 72 S390 137 470 76 S560 48 622 30"
+        />
+
+        <g class="contact-banner-marker contact-banner-marker--start" transform="translate(18 130)">
+          <circle class="contact-banner-pulse" r="11" />
+          <circle class="contact-banner-marker-core" r="4.2" />
+        </g>
+        <g class="contact-banner-marker contact-banner-marker--middle" transform="translate(230 72)">
+          <circle class="contact-banner-pulse" r="10" />
+          <circle class="contact-banner-marker-core" r="3.8" />
+        </g>
+        <g class="contact-banner-marker contact-banner-marker--end" transform="translate(622 30)">
+          <circle class="contact-banner-pulse" r="12" />
+          <circle class="contact-banner-marker-core" r="4.5" />
+        </g>
+
+        <g class="contact-banner-plane">
+          <path d="M-13 -5 L14 0 L-13 5 L-7 0 Z" />
+          <animateMotion
+            dur="16s"
+            repeatCount="indefinite"
+            rotate="auto"
+            path="M18 130 C112 130 105 59 230 72 S390 137 470 76 S560 48 622 30"
+          />
+        </g>
       </svg>
     </div>
 

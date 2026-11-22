@@ -448,7 +448,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
       title: "Mikhail Luchkin",
       tagline: "Building digital solutions, from backend to frontend",
       description:
-        "I build web applications, APIs and system integrations, with a focus on architecture, code quality and user experience.",
+        "I build web applications, APIs and system integrations, with a focus on architecture, code quality and user experience",
       primary: "Explore projects",
       secondary: "Download CV",
       viewCv: "View CV",
