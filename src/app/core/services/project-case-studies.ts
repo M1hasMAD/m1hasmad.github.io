@@ -174,7 +174,7 @@ const caseStudies: Record<PortfolioLanguage, ProjectCaseStudy[]> = {
       category: "AUTOMATIZACIÓN",
       title: "Developer Workflow Automation",
       subtitle:
-        "Integraciones entre GitHub, Jira y Notion para automatizar procesos y recopilar métricas.",
+        "Integraciones entre GitHub, Jira y Notion para automatizar procesos y recopilar métricas",
       organization: "FAANG School",
       period: "Jun 2024 — May 2026",
       metric: "300+",
@@ -364,7 +364,7 @@ const caseStudies: Record<PortfolioLanguage, ProjectCaseStudy[]> = {
       category: "AUTOMATION",
       title: "Developer Workflow Automation",
       subtitle:
-        "GitHub, Jira and Notion integrations to automate workflows and collect metrics.",
+        "GitHub, Jira and Notion integrations to automate workflows and collect metrics",
       organization: "FAANG School",
       period: "Jun 2024 — May 2026",
       metric: "300+",

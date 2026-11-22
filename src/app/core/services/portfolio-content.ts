@@ -121,7 +121,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
       title: "Mikhail Luchkin",
       tagline: "Construyendo soluciones digitales, del backend al frontend.",
       description:
-        "Desarrollo aplicaciones web, APIs e integraciones entre sistemas, con especial atención a la arquitectura, la calidad del código y la experiencia de usuario.",
+        "Desarrollo aplicaciones web, APIs e integraciones entre sistemas, con especial atención a la arquitectura, la calidad del código y la experiencia de usuario",
       primary: "Ver proyectos",
       secondary: "Descargar CV",
       viewCv: "Ver CV",
@@ -153,7 +153,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
       eyebrow: "03 / PROYECTOS DESTACADOS",
       title: "Selected missions",
       intro:
-        "Proyectos y soluciones en los que he participado, desde integraciones backend hasta automatización y búsqueda.",
+        "Proyectos y soluciones en los que he participado, desde integraciones backend hasta automatización y búsqueda",
       details: "Ver detalles técnicos",
       caseStudy: "Abrir caso de estudio",
       challengeLabel: "RETO",
@@ -166,7 +166,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           category: "EXPERIENCIA PROFESIONAL",
           title: "CRM Event Processing",
           summary:
-            "Procesamiento asíncrono de eventos de Salesforce y Bitrix24 mediante una arquitectura orientada a eventos.",
+            "Procesamiento asíncrono de eventos de Salesforce y Bitrix24 mediante una arquitectura orientada a eventos",
           metric: "700+",
           metricLabel: "eventos semanales",
           technologies: ["Java 17", "Spring Boot", "Apache Kafka", "CRM APIs"],
@@ -183,7 +183,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           category: "EXPERIENCIA PROFESIONAL",
           title: "AI-Powered Search",
           summary:
-            "Solución de búsqueda basada en Meilisearch para indexar y consultar registros de webinars.",
+            "Solución de búsqueda basada en Meilisearch para indexar y consultar registros de webinars",
           metric: "−70%",
           metricLabel: "tiempo de búsqueda",
           technologies: ["Meilisearch", "Java", "Search Indexing", "AI"],
@@ -199,7 +199,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           category: "BOOTCAMP PROJECT",
           title: "Microservices Platform",
           summary:
-            "Desarrollo de tres microservicios dentro de una plataforma compuesta por diez servicios.",
+            "Desarrollo de tres microservicios dentro de una plataforma compuesta por diez servicios",
           metric: "3 / 10",
           metricLabel: "microservicios desarrollados",
           technologies: ["Java", "Kafka", "Redis", "REST APIs"],
@@ -216,7 +216,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           category: "AUTOMATIZACIÓN",
           title: "Developer Workflow Automation",
           summary:
-            "Integraciones entre GitHub, Jira y Notion para automatizar procesos y recopilar métricas.",
+            "Integraciones entre GitHub, Jira y Notion para automatizar procesos y recopilar métricas",
           metric: "300+",
           metricLabel: "estudiantes monitorizados",
           technologies: ["GitHub Webhooks", "Jira", "Notion", "REST APIs"],
@@ -238,11 +238,11 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           company: "FAANG School",
           period: "Jun 2024 — May 2026",
           description:
-            "Desarrollé servicios backend y APIs REST con Java 17 y Spring Boot, trabajando en persistencia de datos, integraciones CRM y automatización de flujos internos. Migré más de 20 consultas GraphQL y gestioné cambios del esquema de PostgreSQL con Liquibase.",
+            "Desarrollé servicios backend y APIs REST con Java 17 y Spring Boot, trabajando en persistencia de datos, integraciones CRM y automatización de flujos internos. Migré más de 20 consultas GraphQL y gestioné cambios del esquema de PostgreSQL con Liquibase",
           highlights: [
-            "Procesamiento de más de 700 eventos CRM semanales de Salesforce y Bitrix24 mediante flujos con Kafka.",
-            "Automatización de métricas de repositorios y del onboarding con GitHub, Jira y Notion para más de 300 estudiantes.",
-            "Indexación de más de 10.000 registros de webinars con Meilisearch, reduciendo el tiempo de búsqueda un 70%.",
+            "Procesamiento de más de 700 eventos CRM semanales de Salesforce y Bitrix24 mediante flujos con Kafka",
+            "Automatización de métricas de repositorios y del onboarding con GitHub, Jira y Notion para más de 300 estudiantes",
+            "Indexación de más de 10.000 registros de webinars con Meilisearch, reduciendo el tiempo de búsqueda un 70%",
           ],
         },
         {
@@ -250,11 +250,11 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           company: "CorporationX / FAANG School",
           period: "May 2023 — Nov 2023",
           description:
-            "Contribuí a una plataforma para startups basada en 10 microservicios, centrándome en News Feed, URL Shortener y Payment/Account. Trabajé con Kafka y Redis para la comunicación orientada a eventos, notificaciones y caché.",
+            "Contribuí a una plataforma para startups basada en 10 microservicios, centrándome en News Feed, URL Shortener y Payment/Account. Trabajé con Kafka y Redis para la comunicación orientada a eventos, notificaciones y caché",
           highlights: [
-            "Implementé notificaciones en tiempo real mediante Redis Pub/Sub.",
-            "Añadí caché con Redis para reducir la latencia de URL Shortener.",
-            "Desarrollé funcionalidades de Payment/Account con auditoría de saldos y conversión multidivisa.",
+            "Implementé notificaciones en tiempo real mediante Redis Pub/Sub",
+            "Añadí caché con Redis para reducir la latencia de URL Shortener",
+            "Desarrollé funcionalidades de Payment/Account con auditoría de saldos y conversión multidivisa",
           ],
         },
       ],
@@ -263,8 +263,8 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
       eyebrow: "05 / TECNOLOGÍAS",
       title: "Tecnologías que utilizo",
       intro:
-        "Un mapa de mi stack tecnológico, organizado por las distintas capas del desarrollo de software.",
-      note: "Tecnologías utilizadas en proyectos profesionales, proyectos formativos y aprendizaje práctico.",
+        "Un mapa de mi stack tecnológico, organizado por las distintas capas del desarrollo de software",
+      note: "Tecnologías utilizadas en proyectos profesionales, proyectos formativos y aprendizaje práctico",
       groups: [
         {
           code: "API",
@@ -404,14 +404,14 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           place: "Centro Formación Profesional Nelson",
           period: "2025 — 2027",
           description:
-            "Formación práctica en desarrollo Full Stack: Java, Spring Boot, JavaScript, TypeScript, React, Angular, C#, .NET, Python y bases de datos SQL.",
+            "Formación práctica en desarrollo Full Stack: Java, Spring Boot, JavaScript, TypeScript, React, Angular, C#, .NET, Python y bases de datos SQL",
         },
         {
           title: "Estudios en el ámbito de la aviación",
           place: "Formación técnica anterior",
           period: "Etapa anterior",
           description:
-            "Una primera formación ligada a mi interés por la aviación y los sistemas técnicos.",
+            "Una primera formación ligada a mi interés por la aviación y los sistemas técnicos",
         },
       ],
     },
@@ -419,7 +419,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
       eyebrow: "07 / CONTACTO",
       title: "¿Hablamos?",
       description:
-        "Estoy abierto a nuevas oportunidades, proyectos interesantes y colaboraciones. Si quieres hablar sobre tecnología, desarrollo de software o una posible oportunidad, estaré encantado de escucharte.",
+        "Estoy abierto a nuevas oportunidades, proyectos interesantes y colaboraciones. Si quieres hablar sobre tecnología, desarrollo de software o una posible oportunidad, estaré encantado de escucharte",
       button: "Enviar un email",
       downloadLabel: "Descargar CV",
       emailLabel: "EMAIL",
@@ -480,7 +480,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
       eyebrow: "03 / SELECTED PROJECTS",
       title: "Selected missions",
       intro:
-        "Projects and solutions I have contributed to, from backend integrations to automation and search.",
+        "Projects and solutions I have contributed to, from backend integrations to automation and search",
       details: "View technical details",
       caseStudy: "Open full case study",
       challengeLabel: "CHALLENGE",
@@ -493,7 +493,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           category: "PROFESSIONAL EXPERIENCE",
           title: "CRM Event Processing",
           summary:
-            "Asynchronous processing of Salesforce and Bitrix24 events using an event-driven architecture.",
+            "Asynchronous processing of Salesforce and Bitrix24 events using an event-driven architecture",
           metric: "700+",
           metricLabel: "events per week",
           technologies: ["Java 17", "Spring Boot", "Apache Kafka", "CRM APIs"],
@@ -510,7 +510,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           category: "PROFESSIONAL EXPERIENCE",
           title: "AI-Powered Search",
           summary:
-            "A Meilisearch-based solution for indexing and searching webinar records.",
+            "A Meilisearch-based solution for indexing and searching webinar records",
           metric: "−70%",
           metricLabel: "search time",
           technologies: ["Meilisearch", "Java", "Search Indexing", "AI"],
@@ -526,7 +526,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           category: "BOOTCAMP PROJECT",
           title: "Microservices Platform",
           summary:
-            "Development of three microservices within a platform composed of ten services.",
+            "Development of three microservices within a platform composed of ten services",
           metric: "3 / 10",
           metricLabel: "microservices developed",
           technologies: ["Java", "Kafka", "Redis", "REST APIs"],
@@ -543,7 +543,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           category: "AUTOMATION",
           title: "Developer Workflow Automation",
           summary:
-            "GitHub, Jira and Notion integrations to automate workflows and collect metrics.",
+            "GitHub, Jira and Notion integrations to automate workflows and collect metrics",
           metric: "300+",
           metricLabel: "students monitored",
           technologies: ["GitHub Webhooks", "Jira", "Notion", "REST APIs"],
@@ -565,11 +565,11 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           company: "FAANG School",
           period: "Jun 2024 — May 2026",
           description:
-            "Built backend services and REST APIs with Java 17 and Spring Boot, covering data persistence, CRM integrations and internal workflow automation. Migrated 20+ GraphQL queries and managed PostgreSQL schema changes with Liquibase.",
+            "Built backend services and REST APIs with Java 17 and Spring Boot, covering data persistence, CRM integrations and internal workflow automation. Migrated 20+ GraphQL queries and managed PostgreSQL schema changes with Liquibase",
           highlights: [
-            "Processed 700+ weekly CRM events from Salesforce and Bitrix24 through Kafka-based workflows.",
-            "Automated repository metrics and onboarding workflows across GitHub, Jira and Notion for 300+ students.",
-            "Indexed 10,000+ webinar records with Meilisearch, reducing search time by 70%.",
+            "Processed 700+ weekly CRM events from Salesforce and Bitrix24 (CRM) through Kafka-based workflows",
+            "Automated repository metrics and onboarding workflows across GitHub, Jira and Notion for 300+ students",
+            "Indexed 10,000+ webinar records with Meilisearch, reducing search time by 70%",
           ],
         },
         {
@@ -577,11 +577,11 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           company: "CorporationX / FAANG School",
           period: "May 2023 — Nov 2023",
           description:
-            "Contributed to a startup platform built around 10 microservices, focusing on News Feed, URL Shortener and Payment/Account. Worked with Kafka and Redis for event-driven communication, notifications and caching.",
+            "Contributed to a startup platform built around 10 microservices, focusing on News Feed, URL Shortener and Payment/Account. Worked with Kafka and Redis for event-driven communication, notifications and caching",
           highlights: [
-            "Implemented real-time notifications using Redis Pub/Sub.",
-            "Added Redis caching to reduce URL Shortener latency.",
-            "Developed Payment/Account functionality with balance auditing and multi-currency exchange.",
+            "Implemented real-time notifications using Redis Pub/Sub",
+            "Added Redis caching to reduce URL Shortener latency",
+            "Developed Payment/Account functionality with balance auditing and multi-currency exchange",
           ],
         },
       ],
@@ -590,8 +590,8 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
       eyebrow: "05 / TECHNOLOGIES",
       title: "Technologies I use",
       intro:
-        "A map of my technology stack, organized by the different layers of software development.",
-      note: "Technologies used across professional work, training projects and hands-on learning.",
+        "A map of my technology stack, organized by the different layers of software development",
+      note: "Technologies used across professional work, training projects and hands-on learning",
       groups: [
         {
           code: "API",
@@ -732,14 +732,14 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           place: "Centro Formación Profesional Nelson",
           period: "2025 — 2027",
           description:
-            "Practical Full Stack training: Java, Spring Boot, JavaScript, TypeScript, React, Angular, C#, .NET, Python and SQL databases.",
+            "Practical Full Stack training: Java, Spring Boot, JavaScript, TypeScript, React, Angular, C#, .NET, Python and SQL databases",
         },
         {
           title: "Aviation-related studies",
           place: "Previous technical education",
           period: "Previous stage",
           description:
-            "An earlier educational path connected to my interest in aviation and technical systems.",
+            "An earlier educational path connected to my interest in aviation and technical systems",
         },
       ],
     },
@@ -747,7 +747,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
       eyebrow: "07 / CONTACT",
       title: "Let’s connect",
       description:
-        "I am open to new opportunities, interesting projects and collaborations. Feel free to reach out if you would like to discuss technology, software development or a potential opportunity.",
+        "I am open to new opportunities, interesting projects and collaborations. Feel free to reach out if you would like to discuss technology, software development or a potential opportunity",
       button: "Send an email",
       downloadLabel: "Download CV",
       emailLabel: "EMAIL",
