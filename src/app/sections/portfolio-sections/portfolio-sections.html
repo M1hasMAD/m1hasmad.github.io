@@ -175,9 +175,52 @@
   <div class="section-heading"><div><span class="section-index">06 / {{ copy().education.eyebrow.split('/ ')[1] }}</span><h2>{{ copy().education.title }}</h2></div><span class="heading-rule"></span></div>
   <div class="education-grid">
     @for (item of copy().education.items; track item.title) {
-      <article class="education-card">
-        <div class="education-icon">⌁</div>
-        <div class="education-copy"><span class="timeline-period">{{ item.period }}</span><h3>{{ item.title }}</h3><strong>{{ item.place }}</strong><p>{{ item.description }}</p></div>
+      <article class="education-card" [class.education-card--featured]="item.projects">
+        <div class="education-icon" aria-hidden="true">⌁</div>
+
+        <div class="education-card-heading">
+          <span class="timeline-period">{{ item.period }}</span>
+          <h3>{{ item.title }}</h3>
+          <strong>{{ item.place }}</strong>
+        </div>
+
+        <div class="education-card-content">
+          @if (item.description) {
+            <p class="education-description">{{ item.description }}</p>
+          }
+
+          @if (item.highlights; as highlights) {
+            <ul class="education-highlights">
+              @for (highlight of highlights; track highlight) {
+                <li>{{ highlight }}</li>
+              }
+            </ul>
+          }
+
+          @if (item.firstYearDescription) {
+            <div class="education-year education-year--first">
+              <span class="education-year-label">{{ item.firstYearLabel }}</span>
+              <p>{{ item.firstYearDescription }}</p>
+            </div>
+          }
+
+          @if (item.projects; as projects) {
+            <div class="education-year education-year--second">
+              @if (item.secondYearLabel) {
+                <span class="education-year-label">{{ item.secondYearLabel }}</span>
+              }
+              <div class="education-projects">
+                @for (project of projects; track project.title) {
+                  <div class="education-project">
+                    <span class="education-project-period">{{ project.period }}</span>
+                    <h4>{{ project.title }}</h4>
+                    <p>{{ project.description }}</p>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        </div>
       </article>
     }
   </div>

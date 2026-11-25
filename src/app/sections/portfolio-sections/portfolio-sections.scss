@@ -539,7 +539,7 @@
   padding: 5px 17px;
   border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--line));
   border-radius: 8px;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface-raised) 92%, var(--text) 8%);
   color: var(--text);
   font: 10px var(--mono);
 }
@@ -645,7 +645,7 @@
   padding: 5px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface-raised) 92%, var(--text) 8%);
   color: var(--text);
   font: 10px var(--mono);
 }
@@ -697,7 +697,7 @@
   padding: 5px 8px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface-raised) 92%, var(--text) 8%);
   color: var(--muted);
   font: 11px var(--mono);
 }
@@ -1007,7 +1007,7 @@
   height: 10px;
   border: 2px solid var(--accent);
   border-radius: 50%;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface-raised) 92%, var(--text) 8%);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 .timeline-top {
@@ -1064,7 +1064,9 @@
 }
 .education-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Give the current DAW programme more room than the earlier aviation entry. */
+  grid-template-columns: minmax(0, 1.7fr) minmax(250px, 0.9fr);
+  align-items: start;
   gap: 15px;
 }
 .education-card {
@@ -1866,5 +1868,243 @@
   .search-results i {
     width: 76%;
     opacity: 1;
+  }
+}
+
+
+/* Education: keep the DAW projects grouped inside one qualification card. */
+.education-card--featured .education-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.education-year--first {
+  margin-top: 16px;
+  padding: 0 0 16px;
+}
+.education-year--second {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.education-year-label {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--accent-strong);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.education-year--first p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.education-projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.education-project {
+  min-width: 0;
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--surface-raised) 92%, var(--text) 8%);
+}
+.education-project-period {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-strong);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+.education-project h4 {
+  margin: 0 0 7px;
+  color: var(--text);
+  font: 600 16px/1.4 var(--display);
+}
+.education-project p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .education-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .education-projects {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .education-project {
+    padding: 13px;
+  }
+}
+
+
+/* Education: two full-width horizontal rows, with each card laid out left-to-right. */
+.education-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+}
+.education-card {
+  display: grid;
+  grid-template-columns: 40px minmax(250px, 0.78fr) minmax(0, 1.55fr);
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+  gap: 18px 22px;
+  padding: clamp(20px, 2.2vw, 30px);
+}
+.education-icon {
+  grid-column: 1;
+  grid-row: 1;
+  margin-top: 2px;
+}
+.education-card-heading {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+.education-card-heading .timeline-period {
+  display: block;
+  margin: 2px 0 12px;
+}
+.education-card-heading h3 {
+  margin: 0 0 9px;
+  color: var(--text);
+  font: 600 clamp(19px, 1.55vw, 23px)/1.35 var(--display);
+}
+.education-card-heading strong {
+  display: block;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.education-card-content {
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 0;
+}
+
+/* Vertically center the aviation highlights beside the taller education heading. */
+.education-card:not(.education-card--featured) .education-card-content {
+  align-self: center;
+}
+.education-description {
+  margin: 0 0 15px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+.education-highlights {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.education-highlights li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.education-highlights li::before {
+  position: absolute;
+  top: 0.72em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-strong);
+  content: "";
+}
+.education-year--first {
+  margin: 0;
+  padding: 0 0 15px;
+  border-bottom: 1px solid var(--line);
+}
+.education-year--first p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.education-year--second {
+  padding-top: 15px;
+  border-top: 0;
+}
+.education-projects {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.education-project {
+  min-width: 0;
+  padding: 12px 13px;
+}
+.education-project-period {
+  font-size: 11px;
+  line-height: 1.45;
+}
+.education-project h4 {
+  font-size: 15px;
+}
+.education-project p {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .education-card {
+    grid-template-columns: 36px minmax(210px, 0.7fr) minmax(0, 1.3fr);
+    gap: 16px;
+    padding: 20px;
+  }
+  .education-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .education-card {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 14px 15px;
+    padding: 18px;
+  }
+  .education-card-heading {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .education-card-content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: start;
+  }
+  .education-card-heading h3 {
+    font-size: 19px;
+  }
+  .education-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .education-card {
+    padding: 15px;
+  }
+  .education-projects {
+    grid-template-columns: 1fr;
   }
 }

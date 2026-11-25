@@ -2,21 +2,44 @@
   <div class="hero-grid">
     <div class="hero-copy">
       <div class="profile-frame">
-        <img src="images/profile.webp" alt="Professional portrait of Mikhail Luchkin" fetchpriority="high">
+        <img
+          src="images/profile.webp"
+          alt="Professional portrait of Mikhail Luchkin"
+          fetchpriority="high"
+        />
         <span class="profile-corner corner-top"></span>
         <span class="profile-corner corner-bottom"></span>
         <span class="portrait-index">PROFILE / 001</span>
       </div>
 
       <div class="intro-copy">
-        <div class="eyebrow"><span class="status-dot"></span>{{ copy().eyebrow }}</div>
+        <div class="eyebrow">
+          <span class="status-dot"></span>{{ copy().eyebrow }}
+        </div>
         <h1>{{ copy().title }}</h1>
         <p class="hero-tagline">{{ copy().tagline }}</p>
         <p class="hero-description">{{ copy().description }}</p>
         <div class="hero-actions">
-          <button class="button button-primary" type="button" (click)="scrollToProjects()">{{ copy().primary }} <span>↗</span></button>
-          <a class="button button-secondary" [href]="cvPath()" [attr.download]="cvFilename()">{{ copy().secondary }} <span>↓</span></a>
-          <a class="button button-tertiary" [href]="cvPath()" target="_blank" rel="noopener noreferrer">{{ copy().viewCv }} <span>↗</span></a>
+          <button
+            class="button button-primary"
+            type="button"
+            (click)="scrollToProjects()"
+          >
+            {{ copy().primary }} <span>↗</span>
+          </button>
+          <a
+            class="button button-secondary"
+            [href]="cvPath()"
+            [attr.download]="cvFilename()"
+            >{{ copy().secondary }} <span>↓</span></a
+          >
+          <a
+            class="button button-tertiary"
+            [href]="cvPath()"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ copy().viewCv }} <span>↗</span></a
+          >
         </div>
         <div class="hero-meta">
           <span><span class="meta-icon">⌖</span>{{ copy().location }}</span>
@@ -25,73 +48,132 @@
       </div>
     </div>
 
-    <aside class="flight-panel" aria-label="Engineering flight route illustration">
+    <aside
+      class="flight-panel"
+      aria-label="Engineering flight route illustration"
+    >
       <div class="flight-panel-heading">
         <span class="eyebrow">{{ copy().routeTitle }}</span>
         <span class="flight-code">LOG 001 — ML</span>
       </div>
-      <svg class="flight-map" viewBox="0 0 620 430" role="img" aria-label="Abstract flight route connecting profile, experience, projects and education">
+      <svg
+        #flightMap
+        class="flight-map"
+        viewBox="0 0 620 430"
+        role="group"
+        aria-label="Interactive engineering flight route with seven portfolio navigation waypoints"
+      >
         <defs>
-          <pattern id="map-grid" width="36" height="36" patternUnits="userSpaceOnUse">
-            <path d="M 36 0 L 0 0 0 36" fill="none" stroke="currentColor" stroke-opacity=".12" stroke-width="1"/>
+          <pattern
+            id="map-grid"
+            width="36"
+            height="36"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M 36 0 L 0 0 0 36"
+              fill="none"
+              stroke="currentColor"
+              stroke-opacity=".12"
+              stroke-width="1"
+            />
           </pattern>
           <radialGradient id="map-glow">
-            <stop offset="0" stop-color="#d9a65a" stop-opacity=".22"/>
-            <stop offset="1" stop-color="#d9a65a" stop-opacity="0"/>
+            <stop offset="0" stop-color="#d9a65a" stop-opacity=".22" />
+            <stop offset="1" stop-color="#d9a65a" stop-opacity="0" />
           </radialGradient>
           <linearGradient id="route-gradient" x1="0" x2="1">
-            <stop offset="0" stop-color="#77a9c8"/>
-            <stop offset="1" stop-color="#d9a65a"/>
+            <stop offset="0" stop-color="#77a9c8" />
+            <stop offset="1" stop-color="#d9a65a" />
           </linearGradient>
         </defs>
-        <rect width="620" height="430" fill="url(#map-grid)"/>
-        <ellipse cx="335" cy="220" rx="240" ry="175" fill="url(#map-glow)"/>
-        <g class="map-contours" fill="none" stroke="currentColor" stroke-opacity=".17">
-          <ellipse cx="320" cy="220" rx="268" ry="128"/>
-          <ellipse cx="320" cy="220" rx="210" ry="95"/>
-          <ellipse cx="320" cy="220" rx="148" ry="64"/>
-          <path d="M30 215 C140 100 240 320 350 190 S520 120 610 240"/>
-          <path d="M45 285 C160 170 270 385 390 250 S520 190 605 300"/>
+
+        <rect width="620" height="430" fill="url(#map-grid)" />
+        <ellipse cx="335" cy="220" rx="240" ry="175" fill="url(#map-glow)" />
+        <g
+          class="map-contours"
+          fill="none"
+          stroke="currentColor"
+          stroke-opacity=".17"
+        >
+          <ellipse cx="320" cy="220" rx="268" ry="128" />
+          <ellipse cx="320" cy="220" rx="210" ry="95" />
+          <ellipse cx="320" cy="220" rx="148" ry="64" />
+          <path d="M30 215 C140 100 240 320 350 190 S520 120 610 240" />
+          <path d="M45 285 C160 170 270 385 390 250 S520 190 605 300" />
         </g>
-        <path class="route-shadow" d="M60 335 C145 315 140 190 255 205 S375 300 430 185 S520 95 565 90"/>
-        <path class="route-path" d="M60 335 C145 315 140 190 255 205 S375 300 430 185 S520 95 565 90"/>
-        <g class="route-point point-start" transform="translate(60 335)"><circle r="8"/><circle class="point-pulse" r="16"/></g>
-        <g class="route-point" transform="translate(255 205)"><circle r="7"/><circle class="point-pulse" r="14"/></g>
-        <g class="route-point" transform="translate(430 185)"><circle r="7"/><circle class="point-pulse" r="14"/></g>
-        <g class="route-point point-destination" transform="translate(565 90)"><circle r="8"/><circle class="point-pulse" r="17"/></g>
-        <g class="route-label label-profile" transform="translate(18 365)">
-          <text class="route-kicker" x="0" y="0">01 / {{ copy().routeStart }}</text>
-          <text class="route-caption" x="0" y="18">Mikhail Luchkin</text>
+
+        <!-- One continuous curve passing through all seven waypoint coordinates. -->
+        <path class="route-shadow" [attr.d]="routePathD" />
+        <path #routePath class="route-path" [attr.d]="routePathD" />
+
+        <!-- Marker and label positions are both driven by the same waypoint data in hero.ts. -->
+        @for (wp of waypoints; track wp.id) {
+        <g
+          class="route-waypoint"
+          [class.active]="activeWaypoint() === wp.id"
+          role="link"
+          tabindex="0"
+          [attr.aria-label]="wp.order.toString().padStart(2, '0') + ' / ' + wp.label"
+          (click)="navigateToWaypoint(wp)"
+          (keydown.enter)="navigateToWaypoint(wp)"
+          (keydown.space)="navigateToWaypoint(wp); $event.preventDefault()"
+        >
+          <g
+            class="route-point"
+            [class.point-start]="wp.id === 'profile'"
+            [class.point-destination]="wp.id === 'contact'"
+            [attr.transform]="'translate(' + wp.x + ' ' + wp.y + ')'"
+          >
+            <circle r="8" />
+            <circle class="point-pulse" r="16" />
+          </g>
+          <g
+            class="route-label"
+            [attr.transform]="labelTransform(wp)"
+            [attr.text-anchor]="wp.labelAnchor"
+          >
+            <text class="route-kicker" x="0" y="0">
+              {{ wp.order.toString().padStart(2, '0') }} / {{ wp.label }}
+            </text>
+          </g>
         </g>
-        <g class="route-label label-experience" transform="translate(170 145)">
-          <text class="route-kicker" x="0" y="0">02 / {{ copy().routeExperience }}</text>
-          <text class="route-caption" x="0" y="18">Backend & integrations</text>
-        </g>
-        <g class="route-label label-projects" transform="translate(355 235)">
-          <text class="route-kicker" x="0" y="0">03 / {{ copy().routeProjects }}</text>
-          <text class="route-caption" x="0" y="18">Real-world solutions</text>
-        </g>
-        <g class="route-label label-destination" transform="translate(410 28)">
-          <text class="route-kicker" x="0" y="0">04 / {{ copy().routeDestination }}</text>
-          <text class="route-caption" x="0" y="18">Full Stack Development</text>
-        </g>
-        <g class="route-plane" transform="translate(505 126) rotate(-36)">
-          <path d="M0 -20 L5 -3 L22 5 L22 10 L5 7 L2 22 L-2 22 L-5 7 L-22 10 L-22 5 L-5 -3Z" fill="#d9a65a"/>
+        }
+
+        <!-- Outer group: only moves the airplane along the route -->
+        <g #planeGroup class="route-plane" aria-hidden="true">
+          <!-- Inner group: only controls airplane orientation -->
+          <g #planeArtwork class="route-plane-artwork">
+            <path
+              d="M0 -20 L5 -3 L22 5 L22 10 L5 7 L2 22 L-2 22 L-5 7 L-22 10 L-22 5 L-5 -3Z"
+              fill="#d9a65a"
+            />
+          </g>
         </g>
       </svg>
       <div class="flight-panel-footer">
         <span>ORIGIN <strong>MADRID / ES</strong></span>
-        <span>STATUS <strong><i></i> OPEN TO OPPORTUNITIES</strong></span>
+        <span
+          >STATUS <strong><i></i> OPEN TO OPPORTUNITIES</strong></span
+        >
       </div>
     </aside>
   </div>
 
   <div class="metrics-grid" aria-label="Career highlights">
     @for (metric of metrics(); track metric.caption; let index = $index) {
-      <div class="metric-card">
-        <span class="metric-symbol">{{ ['⌘', '▤', '〈〉', '↗'][index] }}</span>
-        <div><strong>{{ metric.label }}</strong><span>{{ metric.caption }}</span></div>
+    <div class="metric-card">
+      <span class="metric-symbol">
+        @if (index === 3) {
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="metric-arrow-icon">
+          <path d="M7 17 L17 7 M8 7 H17 V16" />
+        </svg>
+        } @else { {{ ['⌘', '▤', '〈〉'][index] }} }
+      </span>
+      <div>
+        <strong>{{ metric.label }}</strong><span>{{ metric.caption }}</span>
       </div>
+    </div>
     }
   </div>
 </section>

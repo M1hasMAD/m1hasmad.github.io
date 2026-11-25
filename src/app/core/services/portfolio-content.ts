@@ -85,6 +85,15 @@ export interface PortfolioContent {
       place: string;
       period: string;
       description: string;
+      highlights?: string[];
+      firstYearLabel?: string;
+      firstYearDescription?: string;
+      secondYearLabel?: string;
+      projects?: {
+        period: string;
+        title: string;
+        description: string;
+      }[];
     }[];
   };
   contact: {
@@ -119,7 +128,7 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
     hero: {
       eyebrow: "SOFTWARE ENGINEER · FULL STACK DEVELOPER",
       title: "Mikhail Luchkin",
-      tagline: "Construyendo soluciones digitales, del backend al frontend.",
+      tagline: "Construyendo soluciones digitales, del backend al frontend",
       description:
         "Desarrollo aplicaciones web, APIs e integraciones entre sistemas, con especial atención a la arquitectura, la calidad del código y la experiencia de usuario",
       primary: "Ver proyectos",
@@ -404,14 +413,42 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           place: "Centro Formación Profesional Nelson",
           period: "2025 — 2027",
           description:
-            "Formación práctica en desarrollo Full Stack: Java, Spring Boot, JavaScript, TypeScript, React, Angular, C#, .NET, Python y bases de datos SQL",
+            "Formación práctica en desarrollo web Full Stack, combinando tecnologías backend y frontend a lo largo de los dos cursos",
+          firstYearLabel: "PRIMER AÑO · FUNDAMENTOS",
+          firstYearDescription:
+            "Fundamentos de programación y trabajo con bases de datos, junto con Sistemas Informáticos: administración y uso de Ubuntu, Linux y Windows Server",
+          secondYearLabel: "SEGUNDO AÑO · DESARROLLO DE APLICACIONES",
+          projects: [
+            {
+              period: "Octubre — noviembre",
+              title: "Aplicación web con Java y Spring",
+              description:
+                "Desarrollo de una aplicación web con Java y Spring, complementada con JavaScript, HTML y CSS",
+            },
+            {
+              period: "Noviembre — diciembre",
+              title: "Aplicación web con Angular",
+              description:
+                "Desarrollo de una aplicación web con Angular y TypeScript, trabajando también con Node.js y PHP",
+            },
+            {
+              period: "Diciembre — enero",
+              title: "Aplicación web con React y .NET",
+              description:
+                "Desarrollo de una aplicación web utilizando React y .NET",
+            },
+          ],
         },
         {
-          title: "Estudios en el ámbito de la aviación",
-          place: "Formación técnica anterior",
-          period: "Etapa anterior",
-          description:
-            "Una primera formación ligada a mi interés por la aviación y los sistemas técnicos",
+          title: "Grado en Ingeniería Aeronáutica (No finalizado)",
+          place: "Belarusian State Aviation Academy, Minsk, Bielorrusia",
+          period: "Sep 2021 — Jul 2022",
+          description: "",
+          highlights: [
+            "Estudio del funcionamiento operativo de aeronaves y motores",
+            "Creación de modelos de ingeniería utilizando AutoCAD",
+            "Uso de MATLAB para cálculo técnico y computación científica",
+          ],
         },
       ],
     },
@@ -732,14 +769,42 @@ const translations: Record<PortfolioLanguage, PortfolioContent> = {
           place: "Centro Formación Profesional Nelson",
           period: "2025 — 2027",
           description:
-            "Practical Full Stack training: Java, Spring Boot, JavaScript, TypeScript, React, Angular, C#, .NET, Python and SQL databases",
+            "Practical Full Stack web development training, combining backend and frontend technologies across both academic years",
+          firstYearLabel: "FIRST YEAR · FOUNDATIONS",
+          firstYearDescription:
+            "Studied programming fundamentals and database management, alongside Sistemas Informáticos (Computer Systems): working with Ubuntu, Linux and Windows Server",
+          secondYearLabel: "SECOND YEAR · APPLICATION DEVELOPMENT",
+          projects: [
+            {
+              period: "October — November",
+              title: "Java and Spring Web Application",
+              description:
+                "Development of a web application with Java and Spring, complemented by JavaScript, HTML and CSS",
+            },
+            {
+              period: "November — December",
+              title: "Angular Web Application",
+              description:
+                "Development of a web application with Angular and TypeScript, also working with Node.js and PHP",
+            },
+            {
+              period: "December — January",
+              title: "React and .NET Web Application",
+              description:
+                "Development of a web application using React and .NET",
+            },
+          ],
         },
         {
-          title: "Aviation-related studies",
-          place: "Previous technical education",
-          period: "Previous stage",
-          description:
-            "An earlier educational path connected to my interest in aviation and technical systems",
+          title: "Bachelor's studies in Aeronautical Engineering (not completed)",
+          place: "Belarusian State Aviation Academy, Minsk, Belarus",
+          period: "Sep 2021 — Jul 2022",
+          description: "",
+          highlights: [
+            "Study of aircraft and engine operating principles",
+            "Creation of engineering models using AutoCAD",
+            "Use of MATLAB for technical calculations and scientific computing",
+          ],
         },
       ],
     },
